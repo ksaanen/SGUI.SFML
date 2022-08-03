@@ -1,2 +1,2 @@
 # SGUI.SFML
-Simple GUI build on SFML engine
+Simple GUI build for SFML(.Net)
