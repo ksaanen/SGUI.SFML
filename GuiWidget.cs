@@ -1,4 +1,7 @@
 namespace SGUI;
+/// <summary>
+/// GuiWidget is a container for grouping controls.
+/// </summary>
 public class GuiWidget: GuiEntity {
   public GuiControl[] Controls;
   public GuiWidget() {
