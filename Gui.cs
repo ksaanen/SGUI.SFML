@@ -11,13 +11,13 @@ public class Gui {
   }
 
   public void Update() {
-    foreach (GuiWidget widget in GuiWidget) {
+    foreach (GuiWidget widget in Widgets) {
       widget.Update();
     }
   }
 
   public void Draw() {
-    foreach (GuiWidget widget in GuiWidget) {
+    foreach (GuiWidget widget in Widgets) {
       widget.Draw();
     }
   }

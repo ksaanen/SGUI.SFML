@@ -13,7 +13,7 @@ public class GuiWidget: GuiEntity {
 
   public GuiWidget(GuiControl[] controls) {
     Controls = new List<GuiControl>();
-    foreach(Control control in controls) {
+    foreach(GuiControl control in controls) {
       Controls.Add(control);
     }
   }
