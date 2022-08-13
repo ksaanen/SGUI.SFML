@@ -19,11 +19,20 @@ public class Game {
 
   //Font font = new Font("Assets/hey_comic.ttf");
   Gui BasicMenu;
+  Widget BasicWidget;
+  ButtonControl BasicButton;
 
   public Game(){
     window.SetFramerateLimit(20);
     window.SetView(view);
+    
     BasicMenu = new Gui(window);
+    BasicWidget = new Widget();
+    BasicButton = new ButtonControl();
+
+    BasicWidget.Controls.Add(BasicButton);
+    BasicMenu.Widgets.Add(BasicWidget);
+
     Run();
   }
 

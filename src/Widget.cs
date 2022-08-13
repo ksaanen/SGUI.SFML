@@ -10,16 +10,6 @@ public class Widget: Entity {
 
   public Widget() {}
 
-  public Widget(Control[] controls) {
-    foreach(Control control in controls) {
-      Controls.Add(control);
-    }
-  }
-
-  public void AddControl(Control control) {
-    Controls.Add(control);
-  }
-
   public override void Draw()
   {
     // First draw this entity
