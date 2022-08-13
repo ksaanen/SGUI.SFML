@@ -6,6 +6,7 @@ namespace SGUI;
 /// </summary>
 public class Widget: Entity {
   public List<Control> Controls = new List<Control>();
+  public WidgetAlignment Alignment = WidgetAlignment.TopLeft;
 
   public Widget() {}
 
