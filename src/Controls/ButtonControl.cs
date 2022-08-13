@@ -1,7 +1,7 @@
 using SFML.Graphics;
 
 namespace SGUI;
-public class ButtonControl: GuiControl {
+public class ButtonControl: Control {
   public Text Text;
   public ButtonControl() {}
 }

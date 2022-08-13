@@ -1,12 +1,12 @@
 using SFML.Graphics;
 
 namespace SGUI;
-public abstract class GuiControl: GuiEntity {
+public abstract class Control: Entity {
   public Shape Shape;
   public enum State { 
     Neutral,
     Focused,
     Clicked
   }
-  public GuiControl() {}
+  public Control() {}
 }

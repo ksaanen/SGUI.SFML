@@ -1,7 +1,7 @@
 using SFML.Graphics;
 
 namespace SGUI;
-public class SliderControl: GuiControl {
+public class SliderControl: Control {
   public float MinValue;
   public float MaxValue;
   public float Value;

@@ -4,21 +4,18 @@ namespace SGUI;
 /// <summary>
 /// GuiWidget is a container for grouping controls.
 /// </summary>
-public class GuiWidget: GuiEntity {
-  public List<GuiControl> Controls;
+public class Widget: Entity {
+  public List<Control> Controls = new List<Control>();
 
-  public GuiWidget() {
-    Controls = new List<GuiControl>();
-  }
+  public Widget() {}
 
-  public GuiWidget(GuiControl[] controls) {
-    Controls = new List<GuiControl>();
-    foreach(GuiControl control in controls) {
+  public Widget(Control[] controls) {
+    foreach(Control control in controls) {
       Controls.Add(control);
     }
   }
 
-  public void AddControl(GuiControl control) {
+  public void AddControl(Control control) {
     Controls.Add(control);
   }
 
@@ -28,7 +25,7 @@ public class GuiWidget: GuiEntity {
     base.Draw();
 
     // Then draw controls on top of this widget
-    foreach (GuiControl control in Controls) {
+    foreach (Control control in Controls) {
       control.Draw();
     }
   }

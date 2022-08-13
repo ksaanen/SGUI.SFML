@@ -1,10 +1,10 @@
 using SFML.System;
 
 namespace SGUI;
-public abstract class GuiEntity {
+public abstract class Entity {
   Vector2f position;
 
-  public GuiEntity() {}
+  public Entity() {}
 
   public virtual void Update() {}
 
