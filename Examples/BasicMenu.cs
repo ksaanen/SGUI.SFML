@@ -1,14 +1,13 @@
 using SFML.Graphics;
+using SFML.System;
 using SFML.Window;
 using SGUI;
 
 class Program {
-
     static void Main(string[] args)
     {
         Game game = new Game();
     }
-
 }
 
 public class Game {
@@ -22,13 +21,18 @@ public class Game {
   Widget BasicWidget;
   ButtonControl BasicButton;
 
-  public Game(){
+  public Game() {
     window.SetFramerateLimit(20);
     window.SetView(view);
     
-    BasicMenu = new Gui(window);
+    BasicMenu = new Gui();
     BasicWidget = new Widget();
-    BasicButton = new ButtonControl();
+    Sprite BasicButtonSprite = new Sprite(new Texture("./Assets/example-button-image.png"));
+    BasicButton = new ButtonControl()
+    {
+      Sprite = BasicButtonSprite,
+      Shape = new RectangleShape(new Vector2f(BasicButtonSprite.GetLocalBounds().Width, BasicButtonSprite.GetLocalBounds().Height))
+    };
 
     BasicWidget.Controls.Add(BasicButton);
     BasicMenu.Widgets.Add(BasicWidget);
@@ -59,7 +63,7 @@ public class Game {
 
   private void Render() {
     window.Clear(SFML.Graphics.Color.Black);
-    BasicMenu.Draw();
+    BasicMenu.Draw(window);
     window.Display();
   }
 }

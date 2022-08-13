@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using SFML.Graphics;
 
 namespace SGUI;
 /// <summary>
@@ -10,14 +11,14 @@ public class Widget: Entity {
 
   public Widget() {}
 
-  public override void Draw()
+  public override void Draw(RenderWindow window)
   {
     // First draw this entity
-    base.Draw();
+    base.Draw(window);
 
     // Then draw controls on top of this widget
     foreach (Control control in Controls) {
-      control.Draw();
+      control.Draw(window);
     }
   }
 

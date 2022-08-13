@@ -3,7 +3,7 @@ using SFML.Graphics;
 namespace SGUI;
 public class Gui {
   public List<Widget> Widgets = new List<Widget>();
-  public Gui(RenderWindow window) {}
+  public Gui() {}
 
   public void Update() {
     foreach (Widget widget in Widgets) {
@@ -11,9 +11,11 @@ public class Gui {
     }
   }
 
-  public void Draw() {
+  public void Draw(RenderWindow window) {
     foreach (Widget widget in Widgets) {
-      widget.Draw();
+      foreach (Control control in widget.Controls) {
+        control.Draw(window);
+      }
     }
   }
 }

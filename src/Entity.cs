@@ -1,3 +1,4 @@
+using SFML.Graphics;
 using SFML.System;
 
 namespace SGUI;
@@ -8,5 +9,7 @@ public abstract class Entity {
 
   public virtual void Update() {}
 
-  public virtual void Draw() {}
+  public virtual void Draw(RenderWindow window) {
+    
+  }
 }
