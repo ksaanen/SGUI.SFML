@@ -3,7 +3,7 @@ using SFML.System;
 
 namespace SGUI;
 public abstract class Entity {
-  Vector2f position;
+  public Vector2f Position;
 
   public Entity() {}
 

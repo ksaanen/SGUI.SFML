@@ -12,29 +12,34 @@ class Program {
 
 public class Game {
   // Display setup
-  const int PixelSize = 4;
+  const int PixelSize = 2;
   RenderWindow window = new RenderWindow(new VideoMode(1280, 720), "BasicMenu example");
   View view = new View(new FloatRect(0f, 0f, 1280 / PixelSize, 720 / PixelSize));
-
-  //Font font = new Font("Assets/hey_comic.ttf");
   Gui BasicMenu;
-  Widget BasicWidget;
-  ButtonControl BasicButton;
 
   public Game() {
     window.SetFramerateLimit(20);
     window.SetView(view);
     
+    // Image button example
     BasicMenu = new Gui();
-    BasicWidget = new Widget();
+    Widget BasicWidget = new Widget();
     Sprite BasicButtonSprite = new Sprite(new Texture("./Assets/example-button-image.png"));
-    BasicButton = new ButtonControl()
+    ButtonControl BasicButton = new ButtonControl()
     {
       Sprite = BasicButtonSprite,
-      Shape = new RectangleShape(new Vector2f(BasicButtonSprite.GetLocalBounds().Width, BasicButtonSprite.GetLocalBounds().Height))
+    };
+
+    Font font = new Font("Assets/hey_comic.ttf");
+    ButtonControl ShapeButton = new ButtonControl()
+    {
+      Shape = new RectangleShape(new Vector2f(2f, 5f)),
+      Text = new Text("Button text", font),
+      Position = new Vector2f(200, 60)
     };
 
     BasicWidget.Controls.Add(BasicButton);
+    BasicWidget.Controls.Add(ShapeButton);
     BasicMenu.Widgets.Add(BasicWidget);
 
     Run();
@@ -58,7 +63,7 @@ public class Game {
   }
 
   private void Update() {
-    // Update
+    BasicMenu.Update();
   }
 
   private void Render() {
